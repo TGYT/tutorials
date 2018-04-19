@@ -23,6 +23,13 @@ client.on('message', message => { // Message Event
     message.delete(); // deletes the content (Usage: !say <text>)
     message.channel.send(say);
   }
+  // hi so today we are going be creating/making avatar command so let's start
+  if (command === 'avatar') {
+    let user = message.mentions.users.first() || message.author; // mention to get avatar
+    
+    // avatar embed
+    let embed = n
+  }
 });
 
 client.login(process.env.SECRET); // My token is hidden so I don't have to regenerate it in every new video
