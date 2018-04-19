@@ -4,7 +4,6 @@ const prefix = '!'; // Commands Prefix
 
 client.on('ready', () => { // Ready Event
   console.log('Bot has started!');
-  client.user.setActivity('YouTube', { type: 'WATCHING' })
 });
 
 client.on('message', message => { // Message Event
