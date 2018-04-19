@@ -23,12 +23,16 @@ client.on('message', message => { // Message Event
     message.delete(); // deletes the content (Usage: !say <text>)
     message.channel.send(say);
   }
-  // hi so today we are going be creating/making avatar command so let's start
   if (command === 'avatar') {
-    let user = message.mentions.users.first() || message.author; // mention to get avatar
+    let user = message.mentions.users.first() || message.author; // mention to get avatar or if no mention it will take author's avatar and send it!
     
     // avatar embed
-    let embed = n
+    let embed = new Discord.RichEmbed()
+    .setAuthor(`${user.username}`)
+    .setImage(user.displayAvatarURL)
+    .setColor('RANDOM') // it will generate random colors now let's test it out!
+    // finally send the avatar
+    message.channel.send(embed)
   }
 });
 
