@@ -1,9 +1,9 @@
 const Discord = require('discord.js'); // Discrd.JS package
 const client = new Discord.Client(); // New Discord Client
-const prefix = '!'; // commands prefix
+const prefix = '!'; // Commands Prefix
 
 client.on('ready', () => { // Ready Event
-    console.log('Bot has started!');
+  console.log('Bot has started!');
 });
 
 client.on('message', message => { // Message Event
@@ -14,13 +14,13 @@ client.on('message', message => { // Message Event
   let args = message.content.slice(prefix.length).trim().split(' '); // arguments 
   let command = args.shift().toLowerCase(); // shift arguments to lower case
   
-    if (command === 'youtube') {
-        message.channel.send('Hi, **YouTube**! Subscribe to **Bolt Codes** for more videos, tutorials, series, etc.');
-    }
+  if (command === 'youtube') {
+    message.channel.send('Hi, **YouTube**! Subscribe to **Bolt Codes** for more videos, tutorials, series, etc.');
+  }
+  
   if (command === 'say') {
-    
     let say = args.join(' ');
-    message.delete(); // deletes the content (!say <text>)
+    message.delete(); // deletes the content (Usage: !say <text>)
     message.channel.send(say);
   }
 });
