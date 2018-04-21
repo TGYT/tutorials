@@ -14,34 +14,13 @@ client.on('message', message => { // Message Event
   let args = message.content.slice(prefix.length).trim().split(' '); // Arguments 
   let command = args.shift().toLowerCase(); // Shift arguments to lower case
   
-  if (command === 'youtube') {
-    message.channel.send('Hi, **YouTube**! Subscribe to **Bolt Codes** for more videos, tutorials, series, etc.');
-  }
-  
-  if (command === 'say') {
-    let say = args.join(' ');
-    message.delete(); // Deletes the content (Usage: !say <text>)
-    message.channel.send(say);
-  }
-  if (command === 'avatar') {
-    let user = message.mentions.users.first() || message.author; // Mention to get avatar or if no mention it will take author's avatar and send it!
-    
-    // avatar embed
-    let embed = new Discord.RichEmbed()
-    .setAuthor(`${user.username}'s Avatar`)
-    .setImage(user.displayAvatarURL) // User's Avatar
-    .setColor('RANDOM') // It will generate random colors now let's test it out!
-    // Sends the avatar embed in the channel.
-    message.channel.send(embed)
-  }
-  
   try {
-    let commands = require(`commands/${cmd}.js`);
+    let commands = require(`./commands/${command}.js`);
     commands.run(client, message, args);
   } catch (e) {
-    console.log(e.stack) // logs error
+    console.log(e.stack)
   } finally {
-    console.log(`${cmd}`) // logs command name
+    console.log(command)
   }
 });
 
