@@ -34,6 +34,15 @@ client.on('message', message => { // Message Event
     // Sends the avatar embed in the channel.
     message.channel.send(embed)
   }
+  
+  try {
+    let commands = require(`commands/${cmd}.js`);
+    commands.run(client, message, args);
+  } catch (e) {
+    console.log(e.stack) // logs error
+  } finally {
+    console.log(`${cmd}`) // logs command name
+  }
 });
 
 client.login(process.env.SECRET); // My token is hidden
