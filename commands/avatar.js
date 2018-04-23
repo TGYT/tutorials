@@ -10,4 +10,4 @@ exports.run = (client, message, args) => {
     .setColor('RANDOM') // It will generate random colors now let's test it out!
     // Sends the avatar embed in the channel.
     message.channel.send(embed)
-}
+};
