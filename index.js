@@ -19,7 +19,7 @@ client.on('message', message => { // Message Event
   } catch (e) {
     console.log(e.stack)
   } finally {
-    console.log(command)
+    console.log(`${message.author.tag} used ${command} command`)
   }
 });
 
