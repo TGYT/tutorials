@@ -14,12 +14,12 @@ client.on('message', message => { // Message Event
   let command = args.shift().toLowerCase(); // Shift arguments to lower case
   
   try {
-    let commands = require(`./commands/${command}.js`);
-    commands.run(client, message, args);
+    let commands = require(`./commands/${command}.js`); // Running commands folder and files
+    commands.run(client, message, args); // Run events
   } catch (e) {
-    console.log(e.stack)
+    console.log(e.stack); // Sends the error in console
   } finally {
-    console.log(`${message.author.tag} used ${command} command`)
+    console.log(`${message.author.tag} used ${command} command`);
   }
 });
 
