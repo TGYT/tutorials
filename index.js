@@ -7,7 +7,6 @@ client.on('ready', () => { // Ready Event
 });
 
 client.on('message', message => { // Message Event
-  
   if (message.author.bot) return undefined; // Bot doesn't reply to itself
   let msg = message.content.toLowerCase(); // Message's content to lowercase letter
   let args = message.content.slice(prefix.length).trim().split(' '); // Arguments 
