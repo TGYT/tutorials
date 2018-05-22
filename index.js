@@ -13,6 +13,9 @@ client.on('message', message => { // Message Event
   let command = args.shift().toLowerCase(); // Shift arguments to lower case
   
   try {
+    if (command === 'echo') command = 'say'; // thanks for watching join my server link in the description down below.
+    if (command === 'sayhitoyt') command = 'youtube';
+    if (command === 'ui') command = 'userinfo'; // let's test this out
     let commands = require(`./commands/${command}.js`); // Running commands folder and files
     commands.run(client, message, args); // Run events
   } catch (e) {
