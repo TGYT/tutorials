@@ -4,7 +4,7 @@ exports.run = (client, message, args) => { // exporting message event, client ob
   
   let user = message.mentions.users.first(); // User Mention
   let embed = new Discord.RichEmbed() // Embed Constructor
-  .setAuthor(`${user.tag}'s Info`, user.displayAvatarURL)
+  // .setAuthor(`${user.tag}'s Info`, user.displayAvatarURL)
   .setThumbnail(user.displayAvatarURL) // User's Avatar
   .setColor('RANDOM') // Generates random color
   .addField('ID', user.id, true) // User ID
