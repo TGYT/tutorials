@@ -8,8 +8,7 @@
   "dependencies": {
     "express": "^4.16.3",
     "discord.js": "^11.3.2",
-    "discordtools": "^1.0.28",
-    "quick.db": "^6.3.1"
+    "discordtools": "^1.0.28"
   },
   "engines": {
     "node": "10.x"

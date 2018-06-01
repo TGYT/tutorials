@@ -1,14 +1,13 @@
 const Discord = require('discord.js'); // Discrd.JS package
 const client = new Discord.Client(); // New Discord Client
-const db = require('quick.db');
+const prefix = '!';
 
 client.on('ready', () => { // Ready Event
   console.log('Bot has started!');
 });
 
-client.on('message', message => { // Message Event
+client.on('message', async message => { // Message Event
   
-  let prefix = '!';
   if (message.author.bot) return undefined; // Bot doesn't reply to itself
   let msg = message.content.toLowerCase(); // Message's content to lowercase letter
   let args = message.content.slice(prefix.length).trim().split(' '); // Arguments 
