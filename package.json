@@ -1,14 +1,14 @@
 {
   "name": "youtube-tutorial-bot",
   "version": "0.0.1",
-  "description": "What am I about?",
+  "description": "Bolt",
   "scripts": {
     "start": "node index.js"
   },
   "dependencies": {
     "express": "^4.16.3",
     "discord.js": "^11.3.2",
-    "discordtools": "^1.0.22"
+    "discordtools": "^1.0.28"
   },
   "engines": {
     "node": "10.x"
