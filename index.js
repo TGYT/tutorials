@@ -4,6 +4,9 @@ const prefix = '!';
 
 client.on('ready', () => { // Ready Event
   console.log('Bot has started!');
+  client.user.setStatus('dnd'); // You can set it to either online, idle, offline or dnd | client status
+  client.user.setActivity(`with YouTube with ${client.users.size}`); // set game status
+  
 });
 
 client.on('message', async message => { // Message Event
