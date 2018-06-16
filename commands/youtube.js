@@ -1,3 +1,3 @@
-exports.run = (client, message, args) => { // Exports client object, message event, and args
-  message.channel.send('Hi, **YouTube**! Subscribe to **Bolt Dev** for more videos, tutorials, series, etc.'); // Sends the string in the channel
+exports.run = (client, message, args) => { // Importing events, const, and etc.
+  message.channel.send('Hi, **YouTube**! Subscribe to **Bolt Dev** for more videos, tutorials, series, etc.');
 }

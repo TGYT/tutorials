@@ -1,27 +1,25 @@
-const Discord = require('discord.js'); // Discrd.JS package
-const client = new Discord.Client(); // New Discord Client
-const prefix = '!';
+const Discord = require('discord.js'); // Importing Discord.js package
+const client = new Discord.Client(); // New Discord client constructor
+const prefix = '!'; // Command Prefix
 
 client.on('ready', () => { // Ready Event
-  console.log('Bot has started!');
-  client.user.setStatus('dnd'); // You can set it to either online, idle, offline or dnd | client status it takes time upto 30 seconds
-  client.user.setActivity(`with YouTube with ${client.users.size}`); // set game status
-  // let's check it out!
-  
+  console.log('Bot has started!'); // Logs "Bot has started!"
+  client.user.setStatus('dnd'); // Client's Status [online, idle, dnd, offline]
+  client.user.setActivity(`with YouTube with ${client.users.size}`); // Game status
 });
 
 client.on('message', async message => { // Message Event
   
   if (message.author.bot) return undefined; // Bot doesn't reply to itself
-  let msg = message.content.toLowerCase(); // Message's content to lowercase letter
+  let msg = message.content.toLowerCase(); // Message content to lowercase
   let args = message.content.slice(prefix.length).trim().split(' '); // Arguments 
-  let command = args.shift().toLowerCase(); // Shift arguments to lower case
+  let command = args.shift().toLowerCase(); // Shift arguments to lowercase
   
   try {
     if (command === 'echo') command = 'say';
     if (command === 'sayhitoyt') command = 'youtube';
-    if (command === 'ui') command = 'userinfo'; // Let's test this out
-    let commands = require(`./commands/${command}.js`); // Running commands folder and files
+    if (command === 'ui') command = 'userinfo';
+    let commands = require(`./commands/${command}.js`); // Run command folder
     commands.run(client, message, args);
   } catch (e) {
     console.log(e.stack); // Throws the error in console
@@ -30,4 +28,4 @@ client.on('message', async message => { // Message Event
   }
 });
 
-client.login(process.env.SECRET); // My token is hidden
+client.login(process.env.SECRET);
