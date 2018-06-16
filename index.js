@@ -8,6 +8,13 @@ client.on('ready', () => { // Ready Event
   client.user.setActivity(`with YouTube with ${client.users.size}`); // Game status
 });
 
+client.on('guildMemberAdd', (member) => {
+  var joinrole = member.guild.roles.find('name', 'User');
+  member.addRole(joinrole);
+  const joinchannel = member.guild.channels.find('name', 'bot-spam');
+  joinchannel.send('New Member Joined!'); // let's test this out!!! Thanks for watching please subscribe for more videos join my server too.!!!!
+});
+
 client.on('message', async message => { // Message Event
   
   if (message.author.bot) return undefined; // Bot doesn't reply to itself
