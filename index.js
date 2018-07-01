@@ -36,4 +36,4 @@ client.on('message', async message => { // Message Event
   }
 });
 
-client.login(process.env.SECRET);
+client.login(process.env.SECRET); // Login
