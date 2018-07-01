@@ -1,4 +1,4 @@
-const Discord = require('discord.js'); // require for embed
+const Discord = require('discord.js'); // Importing discord.js & require method
 
 exports.run = (client, message, args) => {
     let user = message.mentions.users.first() || message.author; // User mention
