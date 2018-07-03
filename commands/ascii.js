@@ -1,6 +1,6 @@
-const figlet = require('figlet'); // require method
+const figlet = require('figlet');
 
-exports.run = (client, message, args) => { // importing...
+exports.run = (client, message, args) => {
   if (!args.join(' ')) return message.channel.send('Please provide text!');
   figlet(args.join(' '), (err, data) => {
     message.channel.send(data, { // send the output to the channel
@@ -8,4 +8,3 @@ exports.run = (client, message, args) => { // importing...
     });
   });
 };
-// let's test this out! That's it for today!!! Join our Discord server.

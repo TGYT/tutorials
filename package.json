@@ -10,7 +10,8 @@
     "discord.js": "^11.3.2",
     "discordtools": "^1.0.52",
     "bolt.db": "^1.0.19",
-    "figlet": "^1.2.0"
+    "figlet": "^1.2.0",
+    "quick.db": "^6.3.2"
   },
   "engines": {
     "node": "10.x"

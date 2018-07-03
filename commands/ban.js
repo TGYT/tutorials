@@ -1,6 +1,6 @@
 const Discord = require('discord.js'); // Importing discord.js
 
-exports.run = async (client, message, args) => { // Importing events, const, and etc.
+exports.run = async (client, message, args) => {
   if (!message.member.hasPermission('BAN_MEMBERS')) return message.channel.send('You don\'t have permission to ban members');
   let member = message.mentions.members.first(); // Member mention
   if (!member) return message.channel.send('Please mention a member to ban!'); // Returns if the member isn't mentioned
@@ -14,4 +14,4 @@ exports.run = async (client, message, args) => { // Importing events, const, and
   .setTitle('Banned!') // Embed title
   .setDescription(`${member.user.tag} has been banned!\nReason: ${reason}`) // Embed's description
   message.channel.send(embed);
-}
+};

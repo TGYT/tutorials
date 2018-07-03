@@ -1,6 +1,6 @@
-const Discord = require('discord.js'); // discord.js package
+const Discord = require('discord.js');
 
-exports.run = (client, message, args) => { // Exporting message event, client object, etc.
+exports.run = (client, message, args) => {
   let user = message.mentions.users.first() || message.author; // Get User from mention
   let embed = new Discord.RichEmbed() // Embed constructor
   .setAuthor(`${user.tag}'s Info`, user.displayAvatarURL) // Embed's author
