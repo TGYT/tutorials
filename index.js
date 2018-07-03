@@ -12,7 +12,7 @@ client.on('ready', () => { // Ready Event
 client.on('guildMemberAdd', async (member) => {
   let autoRole = await db.fetch(`autorole_${member.guild.id}`).catch(err => console.log(err));
   let autorole = member.guild.roles.find('name', autoRole);
-  member.addRole(autorole); // let's test this out!
+  member.addRole(autorole);
   const joinchannel = member.guild.channels.find('name', 'bot-spam');
   joinchannel.send(`Welcome to ${member.guild.name}, ${member.user.tag}!`); // let's test this out!!! Thanks for watching please subscribe for more videos join my server too.!!!!
 });
