@@ -1,6 +1,7 @@
 const Discord = require('discord.js'); // Importing Discord.js package
 const client = new Discord.Client(); // New Discord client constructor
 const prefix = '!'; // Commands prefix
+const db = require('quick.db'); // can be installed by "npm i quick.db" in console
 
 client.on('ready', () => { // Ready Event
   console.log('Bot has started!'); // Logs "Bot has started!" when the bot is started
@@ -8,9 +9,10 @@ client.on('ready', () => { // Ready Event
   client.user.setActivity('with YouTube'); // Game status
 });
 
-client.on('guildMemberAdd', (member) => {
-  var joinrole = member.guild.roles.find('name', 'User');
-  member.addRole(joinrole); // Adds the role to the member
+client.on('guildMemberAdd', async (member) => {
+  let autoRole = await db.fetch(`autorole_${member.guild.id}`).catch(err => console.log(err));
+  let autorole = member.guild.roles.find('name', autoRole);
+  member.addRole(autorole); // let's test this out!
   const joinchannel = member.guild.channels.find('name', 'bot-spam');
   joinchannel.send(`Welcome to ${member.guild.name}, ${member.user.tag}!`); // let's test this out!!! Thanks for watching please subscribe for more videos join my server too.!!!!
 });
