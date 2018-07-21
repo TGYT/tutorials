@@ -1,4 +1,4 @@
-const figlet = require('figlet');
+const figlet = require('figlet'); // npm i figlet
 
 exports.run = (client, message, args) => {
   if (!args.join(' ')) return message.channel.send('Please provide text!');

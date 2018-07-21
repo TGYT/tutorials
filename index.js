@@ -1,7 +1,7 @@
 const Discord = require('discord.js'); // Importing Discord.js package
 const client = new Discord.Client(); // New Discord client constructor
 const prefix = '!'; // Commands prefix
-const db = require('quick.db'); // can be installed by "npm i quick.db" in console
+const db = require('quick.db'); // npm i quick.db
 
 client.on('ready', () => { // Ready Event
     console.log('Bot has started!'); // Logs "Bot has started!" when the bot is started
