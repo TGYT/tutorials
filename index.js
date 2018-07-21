@@ -33,6 +33,7 @@ client.on('message', async message => { // Message Event
         if (command === 'echo') command = 'say';
         if (command === 'sayhitoyt') command = 'youtube';
         if (command === 'ui') command = 'userinfo';
+        if (command === 'asciify') command = 'ascii';
         let commands = require(`./commands/${command}.js`); // Run command folder
         commands.run(client, message, args); // Runs [Client, Message, Args]
     } catch (e) {
