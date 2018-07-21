@@ -19,8 +19,7 @@ client.on('guildMemberAdd', async (member) => {
 });
 
 client.on('message', async message => { // Message Event
-
-    if (message.author.bot) return; // Bot doesn't reply to itself
+    if (message.author.bot) return; // If the bot is the author, returns.
     let msg = message.content.toLowerCase(); // Message content to lowercase
     let args = message.content.slice(prefix.length)
         .trim()
