@@ -1,7 +1,7 @@
 dependencies:
-  bolt.db: 1.0.21
+  bolt.db: 1.0.57
   discord.js: 11.3.2
-  discordtools: 1.0.52
+  discordtools: 2.0.1
   express: 4.16.3
   figlet: 1.2.0
   quick.db: 6.3.2
@@ -86,10 +86,10 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha1-h2eKGdhLR9hZuDGZvVm84iKxBFQ=
-  /bolt.db/1.0.21:
+  /bolt.db/1.0.57:
     dev: false
     resolution:
-      integrity: sha512-ZU3IdfRJJZYJLCXgGZ9AjWuq6vy7243d6I2CNjN189FtrThEmaJneYqfPa0D0fIWNZoW1e+QrfI+ywYIpEJ48g==
+      integrity: sha512-5gKhFL9CwGEf3pt9tBSNVd9BJARFT9s5SF5z9MAdFW+rvkva7JbTqV4yEf3rfmToQA5vde5yChXBx1AhwcZ4NA==
   /bytes/3.0.0:
     dev: false
     engines:
@@ -182,13 +182,13 @@ packages:
       uws: ^9.14.0
     resolution:
       integrity: sha512-Abw9CTMX3Jb47IeRffqx2VNSnXl/OsTdQzhvbw/JnqCyqc2imAocc7pX2HoRmgKd8CgSqsjBFBneusz/E16e6A==
-  /discordtools/1.0.52:
+  /discordtools/2.0.1:
     dependencies:
       discord.js: 11.3.2
-      snekfetch: 4.0.2
+      snekfetch: 4.0.4
     dev: false
     resolution:
-      integrity: sha512-fvk29+NS3Zg2Uf4gMReZsDY6IvmxESUAa8uXQH4WQX2/HbGZvue1mK1YjZuHoGhZHFS+Wniqf6wjr7HOZMILzQ==
+      integrity: sha512-Z7frAgA1kHHF41XQB1xvJLPbjYBYsne8yHOnyE14C+1LSyAaYv1JOS/J1kpNfjis8V3NaxQ4NaWiQdbsOozoYA==
   /ee-first/1.1.1:
     dev: false
     resolution:
@@ -560,10 +560,11 @@ packages:
     dev: false
     resolution:
       integrity: sha512-NjxjITIj04Ffqid5lqr7XdgwM7X61c/Dns073Ly170bPQHLm6jkmelye/eglS++1nfTWktpP6Y2bFXjdPlQqdw==
-  /snekfetch/4.0.2:
+  /snekfetch/4.0.4:
+    deprecated: use node-fetch instead
     dev: false
     resolution:
-      integrity: sha512-oAOHvakkGjzhwdawoRRVpjGSBUTIuLJHluSbTWpC1FjOLwvvL/rZMCJEfEf8RIlsnXB3Kci/yAAc8osa0+AFlQ==
+      integrity: sha512-dyycG9fvwtSJqKPfMVOpXt+60qvMGe7vWLwOJDiSJaiAx+hs2EnFChG2bXCWn7ulz+zGzrHdN9/yeEb0YqEPww==
   /socket.io-adapter/1.1.1:
     dev: false
     resolution:
@@ -680,9 +681,9 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 8
 shrinkwrapVersion: 3
 specifiers:
-  bolt.db: ^1.0.19
+  bolt.db: ^1.0.51
   discord.js: ^11.3.2
-  discordtools: ^1.0.52
+  discordtools: ^2.0.1
   express: ^4.16.3
   figlet: ^1.2.0
   quick.db: ^6.3.2
