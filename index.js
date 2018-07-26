@@ -19,12 +19,12 @@ client.on('guildMemberAdd', async (member) => {
 
 client.on('message', async message => { // Message Event
     var prefix = '!';
-    
-    let fetchedPrefix = await db.fetch(`prefix_${message.guild.id}`);
+    let fetchedPrefix = await db.fetch(`serverPrefix_${message.guild.id}`);
     if (fetchedPrefix === null) fetchedPrefix = prefix;
     else prefix = fetchedPrefix;
-    // let's test it out!
+
     if (message.author.bot) return; // If the bot is the author, returns.
+    if (!message.content.startsWith(prefix)) return undefined;
     let args = message.content.slice(prefix.length)
         .trim()
         .split(' '); // Arguments 
