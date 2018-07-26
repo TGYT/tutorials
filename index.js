@@ -1,6 +1,5 @@
 const Discord = require('discord.js'); // Importing Discord.js package
 const client = new Discord.Client(); // New Discord client constructor
-const prefix = '!'; // Commands prefix
 const db = require('quick.db'); // npm i quick.db
 
 client.on('ready', () => { // Ready Event
@@ -19,8 +18,13 @@ client.on('guildMemberAdd', async (member) => {
 });
 
 client.on('message', async message => { // Message Event
+    var prefix = '!';
+    
+    let fetchedPrefix = await db.fetch(`prefix_${message.guild.id}`);
+    if (fetchedPrefix === null) fetchedPrefix = prefix;
+    else prefix = fetchedPrefix;
+    // let's test it out!
     if (message.author.bot) return; // If the bot is the author, returns.
-    let msg = message.content.toLowerCase(); // Message content to lowercase
     let args = message.content.slice(prefix.length)
         .trim()
         .split(' '); // Arguments 
