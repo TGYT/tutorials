@@ -7,9 +7,9 @@
   },
   "dependencies": {
     "express": "^4.16.3",
-    "discord.js": "^11.3.2",
-    "discordtools": "^2.0.1",
-    "bolt.db": "^1.0.51",
+    "discord.js": "^11.4.2",
+    "discordtools": "^2.0.32",
+    "bolt.db": "^1.0.57",
     "figlet": "^1.2.0",
     "quick.db": "^6.3.2"
   },

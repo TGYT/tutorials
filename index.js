@@ -1,35 +1,34 @@
-const Discord = require('discord.js'); // Importing Discord.js package
-const client = new Discord.Client(); // New Discord client constructor
-const db = require('quick.db'); // npm i quick.db
+const Discord = require('discord.js');
+const client = new Discord.Client();
+const db = require('quick.db');
 
-client.on('ready', () => { // Ready Event
-    console.log('Bot has started!'); // Logs "Bot has started!" when the bot is started
-    client.user.setStatus('online'); // Client's status [online, idle, dnd, offline]
-    client.user.setActivity('with YouTube'); // Game status
+client.on('ready', () => {
+    console.log('Bot has started!');
+    client.user.setStatus('online');
+    client.user.setActivity('with YouTube');
 });
 
 client.on('guildMemberAdd', async (member) => {
-    let autoRole = await db.fetch(`autorole_${member.guild.id}`)
-        .catch(err => console.log(err));
+    let autoRole = await db.fetch(`autorole_${member.guild.id}`).catch(err => console.log(err));
     let autorole = member.guild.roles.find('name', autoRole);
     member.addRole(autorole);
     const joinchannel = member.guild.channels.find('name', 'bot-spam');
-    joinchannel.send(`Welcome to ${member.guild.name}, ${member.user.tag}!`); // let's test this out!!! Thanks for watching please subscribe for more videos join my server too.!!!!
+    joinchannel.send(`Welcome to ${member.guild.name}, ${member.user.tag}!`);
 });
 
-client.on('message', async message => { // Message Event
+client.on('message', async message => {
     var prefix = '!';
     let fetchedPrefix = await db.fetch(`serverPrefix_${message.guild.id}`);
     if (fetchedPrefix === null) fetchedPrefix = prefix;
     else prefix = fetchedPrefix;
 
-    if (message.author.bot) return; // If the bot is the author, returns.
+    if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return undefined;
     let args = message.content.slice(prefix.length)
         .trim()
-        .split(' '); // Arguments 
+        .split(' ');
     let command = args.shift()
-        .toLowerCase(); // Shift arguments to lowercase
+        .toLowerCase();
 
     try {
         // Command Aliases

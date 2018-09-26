@@ -1,7 +1,7 @@
 dependencies:
   bolt.db: 1.0.57
-  discord.js: 11.3.2
-  discordtools: 2.0.1
+  discord.js: 11.4.2
+  discordtools: 2.0.32
   express: 4.16.3
   figlet: 1.2.0
   quick.db: 6.3.2
@@ -87,6 +87,7 @@ packages:
     resolution:
       integrity: sha1-h2eKGdhLR9hZuDGZvVm84iKxBFQ=
   /bolt.db/1.0.57:
+    deprecated: use-discordtools-instead
     dev: false
     resolution:
       integrity: sha512-5gKhFL9CwGEf3pt9tBSNVd9BJARFT9s5SF5z9MAdFW+rvkva7JbTqV4yEf3rfmToQA5vde5yChXBx1AhwcZ4NA==
@@ -162,10 +163,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-l4hXRCxEdJ5CBmE+N5RiBYJqvYA=
-  /discord.js/11.3.2:
+  /discord.js/11.4.2:
     dependencies:
       long: 4.0.0
-      prism-media: 0.0.2
+      prism-media: 0.0.3
       snekfetch: 3.6.4
       tweetnacl: 1.0.0
       ws: 4.1.0
@@ -181,14 +182,14 @@ packages:
       sodium: ^2.0.3
       uws: ^9.14.0
     resolution:
-      integrity: sha512-Abw9CTMX3Jb47IeRffqx2VNSnXl/OsTdQzhvbw/JnqCyqc2imAocc7pX2HoRmgKd8CgSqsjBFBneusz/E16e6A==
-  /discordtools/2.0.1:
+      integrity: sha512-MDwpu0lMFTjqomijDl1Ed9miMQe6kB4ifKdP28QZllmLv/HVOJXhatRgjS8urp/wBlOfx+qAYSXcdI5cKGYsfg==
+  /discordtools/2.0.32:
     dependencies:
-      discord.js: 11.3.2
+      discord.js: 11.4.2
       snekfetch: 4.0.4
     dev: false
     resolution:
-      integrity: sha512-Z7frAgA1kHHF41XQB1xvJLPbjYBYsne8yHOnyE14C+1LSyAaYv1JOS/J1kpNfjis8V3NaxQ4NaWiQdbsOozoYA==
+      integrity: sha512-G42X9FV1sxf8WauxaPifcHNjdWruza2U93ciC9QKRbb54auaia0CtNTLzJrnnF3ZNAuq2EGbCYZOY7OWnTV3Ig==
   /ee-first/1.1.1:
     dev: false
     resolution:
@@ -462,10 +463,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
-  /prism-media/0.0.2:
+  /prism-media/0.0.3:
     dev: false
     resolution:
-      integrity: sha512-L6yc8P5NVG35ivzvfI7bcTYzqFV+K8gTfX9YaJbmIFfMXTs71RMnAupvTQPTCteGsiOy9QcNLkQyWjAafY/hCQ==
+      integrity: sha512-c9KkNifSMU/iXT8FFTaBwBMr+rdVcN+H/uNv1o+CuFeTThNZNTOrQ+RgXA1yL/DeLk098duAeRPP3QNPNbhxYQ==
   /proxy-addr/2.0.3:
     dependencies:
       forwarded: 0.1.2
@@ -557,6 +558,7 @@ packages:
     resolution:
       integrity: sha512-BvE/TwpZX4FXExxOxZyRGQQv651MSwmWKZGqvmPcRIjDqWub67kTKuIMx43cZZrS/cBBzwBcNDWoFxt2XEFIpQ==
   /snekfetch/3.6.4:
+    deprecated: use node-fetch instead
     dev: false
     resolution:
       integrity: sha512-NjxjITIj04Ffqid5lqr7XdgwM7X61c/Dns073Ly170bPQHLm6jkmelye/eglS++1nfTWktpP6Y2bFXjdPlQqdw==
@@ -663,7 +665,7 @@ packages:
   /ws/4.1.0:
     dependencies:
       async-limiter: 1.0.0
-      safe-buffer: 5.1.1
+      safe-buffer: 5.1.2
     dev: false
     resolution:
       integrity: sha512-ZGh/8kF9rrRNffkLFV4AzhvooEclrOH0xaugmqGsIfFgOE/pIz4fMc4Ef+5HSQqTEug2S9JZIWDR47duDSLfaA==
@@ -681,9 +683,9 @@ registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
-  bolt.db: ^1.0.51
-  discord.js: ^11.3.2
-  discordtools: ^2.0.1
+  bolt.db: ^1.0.57
+  discord.js: ^11.4.2
+  discordtools: ^2.0.32
   express: ^4.16.3
   figlet: ^1.2.0
   quick.db: ^6.3.2
