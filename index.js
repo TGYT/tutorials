@@ -24,12 +24,8 @@ client.on('message', async message => {
 
     if (message.author.bot) return;
     if (!message.content.startsWith(prefix)) return undefined;
-    let args = message.content.slice(prefix.length)
-        .trim()
-        .split(' ');
-    let command = args.shift()
-        .toLowerCase();
-
+    let args = message.content.slice(prefix.length).trim().split(' ');
+    let command = args.shift().toLowerCase();
     try {
         // Command Aliases
         if (command === 'echo') command = 'say';
