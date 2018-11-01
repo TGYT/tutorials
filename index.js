@@ -16,6 +16,11 @@ client.on('guildMemberAdd', async (member) => {
     joinchannel.send(`Welcome to ${member.guild.name}, ${member.user.tag}!`);
 });
 
+client.on('guildMemberRemove', (member) => {
+    const channel = member.guild.channels.find('name', 'bot-spam');
+    channel.send(`${member.user.tag} has left ${member.guild.name}.`); // let's try this out.
+});
+
 client.on('message', async (message) => {
     var prefix = '!';
     var fetchedPrefix = await db.fetch(`serverPrefix_${message.guild.id}`);
