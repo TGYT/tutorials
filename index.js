@@ -9,36 +9,37 @@ client.on('ready', () => {
 });
 
 client.on('guildMemberAdd', async (member) => {
-    let autoRole = await db.fetch(`autorole_${member.guild.id}`).catch(err => console.log(err));
-    let autorole = member.guild.roles.find('name', autoRole);
-    member.addRole(autorole);
+    const autoRole = await db.fetch(`autorole_${member.guild.id}`).catch(err => console.log(err));
+    const autorole = member.guild.roles.find('name', autoRole);
     const joinchannel = member.guild.channels.find('name', 'bot-spam');
+    member.addRole(autorole);
     joinchannel.send(`Welcome to ${member.guild.name}, ${member.user.tag}!`);
 });
 
-client.on('message', async message => {
+client.on('message', async (message) => {
     var prefix = '!';
-    let fetchedPrefix = await db.fetch(`serverPrefix_${message.guild.id}`);
+    var fetchedPrefix = await db.fetch(`serverPrefix_${message.guild.id}`);
     if (fetchedPrefix === null) fetchedPrefix = prefix;
     else prefix = fetchedPrefix;
 
-    if (message.author.bot) return;
+    if (message.author.bot) return undefined;
     if (!message.content.startsWith(prefix)) return undefined;
-    let args = message.content.slice(prefix.length).trim().split(' ');
-    let command = args.shift().toLowerCase();
+    var args = message.content.slice(prefix.length).trim().split(' ');
+    var command = args.shift().toLowerCase();
     try {
-        // Command Aliases
         if (command === 'echo') command = 'say';
         if (command === 'sayhitoyt') command = 'youtube';
         if (command === 'ui') command = 'userinfo';
         if (command === 'asciify') command = 'ascii';
-        let commands = require(`./commands/${command}.js`); // Run command folder
-        commands.run(client, message, args); // Runs [Client, Message, Args]
+        if (command === 'clear') command = 'purge';
+        if (command === 'yt') command = 'youtube';
+        let commands = require(`./commands/${command}.js`);
+        commands.run(client, message, args);
     } catch (e) {
-        console.log(e.stack); // Throws the error in console
+        console.log(e.stack);
     } finally {
-        console.log(`${message.author.tag} used ${command} command`); // Logs if the command has been used.
+        console.log(`${message.author.tag} used ${command} command`);
     }
 });
 
-client.login(process.env.SECRET); // Login
+client.login(process.env.CLIENT_TOKEN);
