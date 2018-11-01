@@ -18,7 +18,7 @@ client.on('guildMemberAdd', async (member) => {
 
 client.on('guildMemberRemove', (member) => {
     const channel = member.guild.channels.find('name', 'bot-spam');
-    channel.send(`${member.user.tag} has left ${member.guild.name}.`); // let's try this out.
+    channel.send(`${member.user.tag} has left ${member.guild.name}.`); 
 });
 
 client.on('message', async (message) => {
