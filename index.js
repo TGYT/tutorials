@@ -10,7 +10,7 @@ client.on('ready', () => {
 
 client.on('guildMemberAdd', async (member) => {
     const autoRole = await db.fetch(`autorole_${member.guild.id}`).catch(err => console.log(err));
-    const autorole = member.guild.roles.find('name', autoRole);
+    const autorole = member.guild.roles.find('name', autoRole);\
     const joinchannel = member.guild.channels.find('name', 'bot-spam');
     member.addRole(autorole);
     joinchannel.send(`Welcome to ${member.guild.name}, ${member.user.tag}!`);
