@@ -6,7 +6,6 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "^4.16.3",
     "discord.js": "^11.4.2",
     "discordtools": "^2.0.32",
     "figlet": "^1.2.0",

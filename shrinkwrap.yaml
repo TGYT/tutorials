@@ -1,7 +1,6 @@
 dependencies:
   discord.js: 11.4.2
   discordtools: 2.0.32
-  express: 4.16.3
   figlet: 1.2.0
   quick.db: 6.3.2
 packages:
@@ -679,6 +678,5 @@ shrinkwrapVersion: 3
 specifiers:
   discord.js: ^11.4.2
   discordtools: ^2.0.32
-  express: ^4.16.3
   figlet: ^1.2.0
   quick.db: ^6.3.2

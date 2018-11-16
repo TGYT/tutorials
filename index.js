@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const db = require('quick.db');
 
 client.on('ready', () => {
-    console.log('Bot has started!');
+    console.log(`Logged in as ${client.user.tag}!`);
     client.user.setStatus('online');
     client.user.setActivity('with YouTube');
 });
