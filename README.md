@@ -1,2 +1,1 @@
-YouTube Bot
-==========================
+# YouTube Bot
