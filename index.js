@@ -8,18 +8,17 @@ client.on('ready', () => {
     client.user.setActivity('with YouTube');
 });
 
-client.on('guildMemberAdd', async (member) => {
-    const autoRole = await db.fetch(`autorole_${member.guild.id}`).catch(err => console.log(err));
-    const autorole = member.guild.roles.find('name', autoRole);\
-    const joinchannel = member.guild.channels.find('name', 'bot-spam');
-    member.addRole(autorole);
-    joinchannel.send(`Welcome to ${member.guild.name}, ${member.user.tag}!`);
+client.on('guildMemberAdd', (member) => {
+    const logChannel = member.guild.channels.find(channel => channel.name === 'super-testing');
+    if (!logChannel) return undefined;
+    logChannel.send(`${member.user.tag} has just joined!`);
 });
 
 client.on('guildMemberRemove', (member) => {
-    const channel = member.guild.channels.find('name', 'bot-spam');
-    channel.send(`${member.user.tag} has left ${member.guild.name}.`); 
-});
+    const logChannel = member.guild.channels.find(channel => channel.name === 'super-testing');
+    if (!logChannel) return undefined;
+    logChannel.send(`${member.user.tag} has just left!`);
+}); // let's test it out! Make sure to restart the bot.
 
 client.on('message', async (message) => {
     var prefix = '!';
