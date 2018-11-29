@@ -1,1 +1,1 @@
-module.exports.TOKEN = 'NDM1NzQyNzg3NDU1OTQyNjc2.DrzViw.dG2sDXwiYgn09Pwzcuto0dUX9sk';
+module.exports.TOKEN = 'NDM1NzQyNzg3NDU1OTQyNjc2.DuGcbg.WEX8FI5aGgCRFLPOs9srDr55Vmk';
