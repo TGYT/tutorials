@@ -7,7 +7,6 @@
   },
   "dependencies": {
     "discord.js": "^11.4.2",
-    "discordtools": "^2.0.32",
     "figlet": "^1.2.0",
     "quick.db": "^6.3.2"
   },
