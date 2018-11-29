@@ -18,7 +18,7 @@ client.on('guildMemberRemove', (member) => {
     const logChannel = member.guild.channels.find(channel => channel.name === 'super-testing');
     if (!logChannel) return undefined;
     logChannel.send(`${member.user.tag} has just left!`);
-}); // let's test it out! Make sure to restart the bot.
+});
 
 client.on('message', async (message) => {
     var prefix = '!';
