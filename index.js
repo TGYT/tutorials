@@ -1,11 +1,11 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const db = require('quick.db');
+const config = require('./config');
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setStatus('online');
-    client.user.setActivity('with YouTube');
+    client.user.setPresence({ game: { name: 'with Alpha Dev', type: 'PLAYING' }, status: 'online' });
 });
 
 client.on('guildMemberAdd', (member) => {
@@ -23,7 +23,7 @@ client.on('guildMemberRemove', (member) => {
 client.on('message', async (message) => {
     var prefix = '!';
     var fetchedPrefix = await db.fetch(`serverPrefix_${message.guild.id}`);
-    if (fetchedPrefix === null) fetchedPrefix = prefix;
+    if (fetchedPrefix === null || typeof fetchedPrefix === 'undefined') fetchedPrefix = prefix;
     else prefix = fetchedPrefix;
 
     if (message.author.bot) return undefined;
@@ -39,11 +39,11 @@ client.on('message', async (message) => {
         if (command === 'yt') command = 'youtube';
         let commands = require(`./commands/${command}.js`);
         commands.run(client, message, args);
-    } catch (e) {
-        console.log(e.stack);
+    } catch (err) {
+        console.log(err.stack);
     } finally {
         console.log(`${message.author.tag} used ${command} command`);
     }
 });
 
-client.login('NDM1NzQyNzg3NDU1OTQyNjc2.DrzViw.dG2sDXwiYgn09Pwzcuto0dUX9sk');
+client.login(config.TOKEN);
