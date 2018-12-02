@@ -1,0 +1,16 @@
+{
+  "name": "electron-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boltxyz/youtube-tutorial.git"
+  },
+  "author": "boltxyz",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/boltxyz/youtube-tutorial/issues"
+  },
+  "homepage": "https://github.com/boltxyz/youtube-tutorial#readme"
+}
