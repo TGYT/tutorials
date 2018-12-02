@@ -1,0 +1,24 @@
+{
+  "name": "youtube-tutorial-bot",
+  "version": "1.0.0",
+  "description": "YouTube Tutorial Bot",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "quick.db": "^6.3.2",
+    "figlet": "^1.2.1"
+  },
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boltxyz/tutorials.git"
+  },
+  "author": "boltxyz",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/boltxyz/tutorials/issues"
+  },
+  "homepage": "https://github.com/boltxyz/tutorials#readme"
+}
