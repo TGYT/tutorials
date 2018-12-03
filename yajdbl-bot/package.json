@@ -1,0 +1,13 @@
+{
+  "name": "yajdbl-bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "author": "boltxyz",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "yajdbl": "^0.2.0"
+  }
+}

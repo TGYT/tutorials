@@ -79,5 +79,5 @@ typings/
 .dynamodb/
 
 # Misc
-config.js
+env.js
 json.sqlite

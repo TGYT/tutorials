@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const db = require('quick.db');
-const config = require('./config');
+const env = require('../env');
 
 client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
@@ -11,13 +11,13 @@ client.on('ready', () => {
 client.on('guildMemberAdd', (member) => {
     const logChannel = member.guild.channels.find(channel => channel.name === 'super-testing');
     if (!logChannel) return undefined;
-    logChannel.send(`${member.user.tag} has just joined!`);
+    logChannel.send(`${member.user.tag} has just joined.`);
 });
 
 client.on('guildMemberRemove', (member) => {
     const logChannel = member.guild.channels.find(channel => channel.name === 'super-testing');
     if (!logChannel) return undefined;
-    logChannel.send(`${member.user.tag} has just left!`);
+    logChannel.send(`${member.user.tag} has just left.`);
 });
 
 client.on('message', async (message) => {
@@ -32,18 +32,13 @@ client.on('message', async (message) => {
     var command = args.shift().toLowerCase();
     try {
         if (command === 'echo') command = 'say';
-        if (command === 'sayhitoyt') command = 'youtube';
-        if (command === 'ui') command = 'userinfo';
-        if (command === 'asciify') command = 'ascii';
         if (command === 'clear') command = 'purge';
         if (command === 'yt') command = 'youtube';
         let commands = require(`./commands/${command}.js`);
         commands.run(client, message, args);
     } catch (err) {
-        console.log(err.stack);
-    } finally {
-        console.log(`${message.author.tag} used ${command} command`);
+        throw err;
     }
 });
 
-client.login(config.TOKEN);
+client.login(env.TUTORIAL_BOT_TOKEN);
